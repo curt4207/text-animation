@@ -1,0 +1,54 @@
+ @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
+:root {
+    --background: radial-gradient(circle, rgba(44,10,59,0.9808298319327731) 6%, rgba(35,25,36,1) 38%);
+    --textColor: #11e7ff;
+    --h1: #30e726;
+}
+
+ * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    box-sizing: border-box;
+
+
+ }
+
+ .h1 {
+    display: flex;
+    color: var(--h1);
+    font-size: 3.5rem;
+    -webkit-box-reflect: below 2px linear-gradient(transparent, transparent 45%, white);
+ }
+
+ section {
+    position: relative;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* setting min-height to 100vh moves the content down */
+    min-height: 100vh;
+    background: var(--background);
+    
+}
+
+section .text {
+    position: relative;
+    text-align: center;
+    margin: 50px;
+    /* color: #00e7ff; */
+    
+    font-size: 20px;
+    max-width: 950px;
+
+   
+    color: var(--textColor);
+    font-family: Bahnschrift;
+ }
+
+ section .text span {
+    position: relative;
+    display: inline-block;
+ }
+

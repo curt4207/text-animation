@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- Resources reference's: Online Tutorials Youtube= https://youtu.be/GWLB00EvhE8 ,
+    https://animejs.com/documentation/#cssSelector
+
+    This is my variation
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Text Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<section>
+<body>
+    <h1 class="h1">CSS Fun</h1>
+        <!-- <p class="text">        
+                “You never won’t know what you can’t achieve until you don’t achieve it.”
+                — Chris Parnell
+
+            </p> -->
+            <p class="text">
+            Here's a good trick: Get a job as a judge at the Olympics. Then, if some guy
+            sets a world record, pretend that you didn't see it and go, "Okay, is
+            everybody ready to start now?"
+            —DEEP THOUGHTS by Jack Handey
+
+        </p>
+    </section>
+    <script src="node_modules/animejs/lib/anime.min.js"></script>
+    <script>
+        // put javascript here to split text into individual letters, set querySelector to text
+        const text = document.querySelector(".text");
+//Note:
+//  (/\S/g) Is A global search for whitespace characters:  JavaScript, a regular expression text search, can be done with different methods.The \s metacharacter matches whitespace character.Whitespace characters can be:A space character, A tab character ,A carriage return character, A new ,line character ,A vertical tab character ,A form feed character.
+        text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>")
+
+        const animation = anime.timeline({
+            targets : ".text span",
+            easing: "easeInOutExpo",
+            direction: "alternate",
+            loop: true,
+
+        });
+
+        animation
+        .add({
+            //Note:  Set rotate to a random number    
+            rotate: function() {
+                return anime.random(-360, 360)
+            },
+            translateX: function() {
+                return anime.random(-460, 460)
+            },
+            translateY: function() {
+                return anime.random(-460, 460)
+            },
+            duration: 5000,
+            delay: anime.stagger(25),
+        })
+        
+        .add({
+            rotate: 0,
+            translateX: 0,
+            translateY: 0,
+            duration: 5000,
+            delay: anime.stagger(25),
+        })
+
+
+      
+    </script>
+    
+</body>
+</html>
