@@ -9,6 +9,7 @@
 /* body holds the page the h1, section then <p> tags */
 body {
    display: flex;
+   flex-direction: column;
    box-sizing: border-box;
    margin: 10px;
    padding: 0;
@@ -19,16 +20,8 @@ body {
    }
    
 section {
-   /* position: relative; */
-   /* display: flex ; */
-   /* flex-wrap: wrap; */
-   /* flex-direction: row; */
-   /* justify-content: center; */
-   /* align-items: center; */
    overflow: hidden;
-   /* setting min-height to 100vh moves the content down */
-   /* min-height: 100vh; */
-   
+   min-height: 100vh;
 }
 
   
@@ -36,23 +29,26 @@ section {
     display: flex;
     justify-content: center;
     color: var(--h1);
-    font-size: 3.5rem;
-    -webkit-box-reflect: below 2px linear-gradient(transparent , transparent 45%, rgba(255, 255, 255, 0.208));
+    font-size: 5.5rem;
+    margin-bottom: 6rem;
+    -webkit-box-reflect: below 1px linear-gradient(transparent , transparent 45%,
+     rgba(255, 255, 255, 0.162));
  }
  p {
    display: flex;
+   
    justify-content: center;
- border: 1px solid yellow;
+ /* border: 1px solid yellow; */
 
  }
 
 section .text1 {
-    /* position: relative; */
-    /* text-align: center; */
-    /* margin: 50px; */
-    /* white-space: nowrap; */
+   white-space: pre-wrap;
+  display: flex;
+  flex-wrap: wrap;
+  word-wrap: normal;
     font-size: 2rem;
-   
+    padding: 1rem;
     color: var(--textColor);
     font-family: Bahnschrift;
  }
@@ -62,16 +58,18 @@ section .text1 {
  } */
  
  section .text2 {
-   /* position: relative; */
+   white-space: pre-wrap;
+  
    display: flex;
    flex-wrap: wrap;
+   justify-content: center;
    text-align: center;
    margin: 5px;
-   color: #00e7ff;
-   /* white-space: pre-line; */
+   color: #00ffff;
    font-size: 2rem;
    min-width: 950px;
-  
+   padding-left: 6rem;
+   padding-right: 6rem;
    color: var(--textColor);
    font-family: Bahnschrift;
 } 
