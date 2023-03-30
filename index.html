@@ -5,72 +5,76 @@
     This is my variation
 -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flying Text Animation</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<section>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1 class="h1">CSS Fun</h1>
-        <!-- <p class="text">        
-                “You never won’t know what you can’t achieve until you don’t achieve it.”
-                — Chris Parnell
-
-            </p> -->
-            <p class="text">
-            Here's a good trick: Get a job as a judge at the Olympics. Then, if some guy
-            sets a world record, pretend that you didn't see it and go, "Okay, is
-            everybody ready to start now?"
-            —DEEP THOUGHTS by Jack Handey
-
-        </p>
+    <section>
+      <p class="text1">
+        “You never won’t know what you can’t achieve until you don’t achieve
+        it.” — Chris Parnell
+      </p>
+      <p class="text2">
+        Here's a good trick: Get a job as a judge at the Olympics. Then, if some guy sets a world record, pretend that you didn't see it and go, "Okay, is everybody ready to start now? "As we were driving, we saw a sign that said "Watch for Rocks." Marta said it should read "Watch for Pretty Rocks." I told her she should write in her suggestion to the highway department, but she started saying it was a joke - just to get out of writing a simple letter! And I thought I was lazy! If you saw two guys named Hambone and Flippy, which one would you think liked dolphins the most? I'd say Flippy, wouldn't you? You'd be wrong, though. It's Hambone. Laurie got offended that I used the word "puke." But to me, that's what her dinner tasted like. We used to laugh at Grandpa when he'd head off and go fishing. But we wouldn't be laughing that evening when he'd come back with some whore he picked up in town. I wish a robot would get elected president. That way, when he came to town, we could all take a shot at him and not feel too bad. As the evening sky faded from a salmon color to a sort of flint gray, I thought back to the salmon I caught that morning, and how gray he was, and how I named him Flint. Whenever I see an old lady slip and fall on a wet sidewalk, my first instinct is to laugh. But then I think, what if I was an ant, and she fell on me. Then it wouldn't seem quite so funny. If you go parachuting, and your parachute doesn't open, and you friends are all watching you fall, I think a funny gag would be to pretend you were swimming.
+    <p>
     </section>
     <script src="node_modules/animejs/lib/anime.min.js"></script>
     <script>
-        // put javascript here to split text into individual letters, set querySelector to text
-        const text = document.querySelector(".text");
-//Note:
-//  (/\S/g) Is A global search for whitespace characters:  JavaScript, a regular expression text search, can be done with different methods.The \s metacharacter matches whitespace character.Whitespace characters can be:A space character, A tab character ,A carriage return character, A new ,line character ,A vertical tab character ,A form feed character.
-        text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>")
+      // put javascript here to split text into individual letters, set querySelector to text
+      const text = document.querySelector(".text2");
+      // console.log("🚀 ~ file: index.html:36 ~ text:", text)
 
-        const animation = anime.timeline({
-            targets : ".text span",
-            easing: "easeInOutExpo",
-            direction: "alternate",
-            loop: true,
+      // function toggleClass() {
+      //     let x = document.getElementById()
+      // }
 
+      //Note:
+      // /[\S\n]/g  Is A global search for whitespace characters:  JavaScript, a regular expression text search, can be done with different methods.The \s metacharacter matches whitespace character.Whitespace characters can be:A space character, A tab character ,A carriage return character, A new ,line character ,A vertical tab character ,A form feed character.
+        text.innerHTML = text.textContent.replace(/[\S\s]/g, "<span>$&</span>");
+      // .style.wordSpacing = "4.5px"
+
+    //   text.innerHTML = text.textContent.replace(
+    //     /\S+\s+/g,
+    //     (item) => {
+    //       return `<span>${item}</span>`;
+    //     }
+    //   );
+
+      const animation = anime.timeline({
+        targets : ".text2 span",
+        easing: "easeInOutExpo",
+        direction: "alternate",
+        loop: true,
+      });
+
+      animation
+        .add({
+          //Note:  Set rotate to a random number
+          rotate: function () {
+            return anime.random(-360, 360);
+          },
+          translateX: function () {
+            return anime.random(-460, 460);
+          },
+          translateY: function () {
+            return anime.random(-460, 460);
+          },
+          duration: 8000,
+          delay: anime.stagger(100),
+        })
+
+        .add({
+          rotate: 0,
+          translateX: 0,
+          translateY: 0,
+          duration: 7000,
+          delay: anime.stagger(35),
         });
-
-        animation
-        .add({
-            //Note:  Set rotate to a random number    
-            rotate: function() {
-                return anime.random(-360, 360)
-            },
-            translateX: function() {
-                return anime.random(-460, 460)
-            },
-            translateY: function() {
-                return anime.random(-460, 460)
-            },
-            duration: 5000,
-            delay: anime.stagger(25),
-        })
-        
-        .add({
-            rotate: 0,
-            translateX: 0,
-            translateY: 0,
-            duration: 5000,
-            delay: anime.stagger(25),
-        })
-
-
-      
     </script>
-    
-</body>
+  </body>
 </html>
