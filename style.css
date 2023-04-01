@@ -17,6 +17,7 @@ body {
    font-family: 'Red Hat Display', sans-serif;
  border: 1px solid green;
    background: var(--background2);
+   overflow: hidden;
    }
    
 section {
@@ -29,8 +30,9 @@ section {
     display: flex;
     justify-content: center;
     color: var(--h1);
-    font-size: 5.5rem;
-    margin-bottom: 6rem;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    margin-top: -5px;
     -webkit-box-reflect: below 1px linear-gradient(transparent , transparent 45%,
      rgba(255, 255, 255, 0.162));
  }
@@ -48,7 +50,7 @@ section .text1 {
   flex-wrap: wrap;
   word-wrap: normal;
     font-size: 2rem;
-    padding: 1rem;
+    padding: 0.5rem;
     color: var(--textColor);
     font-family: Bahnschrift;
  }
@@ -72,8 +74,11 @@ section .text1 {
    padding-right: 6rem;
    color: var(--textColor);
    font-family: Bahnschrift;
+   margin-bottom: 0;
 } 
 
 section .text2 span {
    white-space: pre-wrap;
+   margin-bottom: 0;
+
 }
