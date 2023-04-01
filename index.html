@@ -23,13 +23,13 @@
           <button class="play">play</button>
           <button class="pause">pause</button>
           <button class="restart">restart</button>
-          <input class="control" id="control" type="range" min="0" max="100" />
+          <input class="control" id="control" type="range"  value="0" min="0" max="100" />
         </div>
        <div>
           <button class="play2">play 2</button>
           <button class="pause2">pause 2</button>
           <button class="restart2">restart 2</button>
-          <input class="control2" id="control2" type="range" min="0" max="100" />
+          <input class="control2" id="control2" type="range" value="0" min="0" max="100" />
         </div>
       </header>
 <hr>
@@ -128,7 +128,6 @@
         // Control 1
       controlsProgressEl.addEventListener("input", function () {
         animation.seek(animation.duration * (controlsProgressEl.value / 100));
-        animation.seek((scrollPercent / 100) * animation.duration);
       });
       document.querySelector(".play").onclick = animation.play;
       document.querySelector(".pause").onclick = animation.pause;
@@ -140,7 +139,6 @@
         animation2.seek(
           animation2.duration * (controlsProgressEl2.value / 100)
         );
-        animation2.seek((scrollPercent / 100) * animation2.duration);
       });
 
       // button group two
